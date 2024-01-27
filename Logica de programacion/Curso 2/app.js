@@ -2,7 +2,9 @@
 let numSecreto = 0;
 let intentos = 0;   
 let numeroMaximo = 10;
+let vidas = 0;
 let listaNumerosSecretos = [];
+let numeroMaximoLista = false;
 
 //Funciones
 function asignarTextoElemento (elemento, texto) {
@@ -14,19 +16,40 @@ function asignarTextoElemento (elemento, texto) {
 //Lógica del juego
 function verificarIntento() {
     let numeroUsuario = parseInt(document.getElementById("numeroUsuario").value);
-    if(numeroUsuario === numSecreto){
-        //Usuario adivino
-        asignarTextoElemento("p", `Adivinaste el número secreto en ${intentos} ${intentos === 1 ? "intento!" : "intentos!"}`);
-        document.getElementById("reiniciar").removeAttribute("disabled");
-    } else {
-        //Usuario no adivino
-        if(numeroUsuario > numSecreto){
-            asignarTextoElemento("p", "El número secreto es menor");
+    if(!numeroMaximoLista){
+        if(numeroUsuario === numSecreto){
+            //Usuario adivino
+            asignarTextoElemento("#info", `Adivinaste el número secreto en ${intentos} ${intentos === 1 ? "intento!" : "intentos!"}`);
+            document.getElementById("reiniciar").removeAttribute("disabled");
+            asignarTextoElemento("#vidas","");
         } else {
-            asignarTextoElemento("p", "El número secreto es mayor");
+            //Usuario no adivino
+            vidas--;
+            if (vidas === 0) {
+                asignarTextoElemento("p","No adivinaste el número secreto 😢");
+                asignarTextoElemento("#vidas","Vuelve a intentarlo!");
+                document.getElementById("reiniciar").removeAttribute("disabled");
+                listaNumerosSecretos = [];
+            }else {
+                if(numeroUsuario > numSecreto){
+                    asignarTextoElemento("#info", "El número secreto es menor");
+                    asignarTextoElemento("#vidas",`Vidas restantes: ${vidas}`);
+                } else {
+                    asignarTextoElemento("#info", "El número secreto es mayor");
+                    asignarTextoElemento("#vidas",`Vidas restantes: ${vidas}`);
+                }
+                intentos++;
+                limpiarInput();
+            }
         }
-        intentos++;
-        limpiarInput();
+    }else{
+        asignarTextoElemento("h1", "Felicitaciones! Has ganado!");
+        asignarTextoElemento("#info","Se han generado todos los números posibles");
+        document.getElementById("reiniciar").removeAttribute("disabled");
+        asignarTextoElemento("#reiniciar","Reiniciar");
+        document.getElementById("reiniciar").setAttribute("class","container__boton reinicio");
+        listaNumerosSecretos = [];
+        numeroMaximoLista = false;
     }
     return;
 }
@@ -42,11 +65,16 @@ function condicionesIniciales(){
     /*DOM (Document Object Model)*/ 
     asignarTextoElemento("h1", "Juego del numero secreto");
     asignarTextoElemento("p", `Indica un número del 1 al ${numeroMaximo}`);
+    asignarTextoElemento("#reiniciar","Nuevo juego");
+    asignarTextoElemento("#vidas","");
+    document.getElementById("reiniciar").setAttribute("class","container__boton nuevo");
     numSecreto = numAleat();
     intentos = 1;
+    vidas = 3;
+    return;
 }
 
-//Reinicia todo
+//Reinicia el juego
 function reiniciarJuego(){
     limpiarInput();
     condicionesIniciales();
@@ -59,10 +87,10 @@ function numAleat() {
     let numGenerado = Math.floor(Math.random() * numeroMaximo) + 1;
     console.log(numGenerado);
     console.log(listaNumerosSecretos);
-
-    if (listaNumerosSecretos.length === numeroMaximo) {
-        asignarTextoElemento("p","Adivinaste todos los números secretos!");
-    } else {
+    //Verificación de que no se hayan generado todos los números
+    if (listaNumerosSecretos.length == numeroMaximo - 1) {
+        numeroMaximoLista = true;
+    }else {
         //Verificación del número secreto para que no haya repeticiones
         if (listaNumerosSecretos.includes(numGenerado)) {
             return numAleat();
@@ -72,6 +100,5 @@ function numAleat() {
         }
     }
 }
-
 
 condicionesIniciales();

@@ -72,6 +72,10 @@ body::before {
     background-color: rgb(0, 200, 0);
 }
 
+.reinicio {
+    background-color: rgb(255,0,0);
+}
+
 .container__texto {
     margin: 16px 0 16px 0;
 }
