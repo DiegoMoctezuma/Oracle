@@ -85,8 +85,6 @@ function reiniciarJuego(){
 //Generación de número aleatorio
 function numAleat() {
     let numGenerado = Math.floor(Math.random() * numeroMaximo) + 1;
-    console.log(numGenerado);
-    console.log(listaNumerosSecretos);
     //Verificación de que no se hayan generado todos los números
     if (listaNumerosSecretos.length == numeroMaximo - 1) {
         numeroMaximoLista = true;
