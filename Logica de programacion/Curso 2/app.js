@@ -1,6 +1,8 @@
 //Variables
 let numSecreto = 0;
 let intentos = 0;   
+let numeroMaximo = 10;
+let listaNumerosSecretos = [];
 
 //Funciones
 function asignarTextoElemento (elemento, texto) {
@@ -9,6 +11,7 @@ function asignarTextoElemento (elemento, texto) {
     return;
 }
 
+//Lógica del juego
 function verificarIntento() {
     let numeroUsuario = parseInt(document.getElementById("numeroUsuario").value);
     if(numeroUsuario === numSecreto){
@@ -28,19 +31,22 @@ function verificarIntento() {
     return;
 }
 
+//Limpieza del número anterior
 function limpiarInput(){
     document.querySelector("#numeroUsuario").value = "";
     return;
 }
 
+//Opciones iniciales
 function condicionesIniciales(){
     /*DOM (Document Object Model)*/ 
     asignarTextoElemento("h1", "Juego del numero secreto");
-    asignarTextoElemento("p", "Indica un número del 1 al 10");
+    asignarTextoElemento("p", `Indica un número del 1 al ${numeroMaximo}`);
     numSecreto = numAleat();
     intentos = 1;
 }
 
+//Reinicia todo
 function reiniciarJuego(){
     limpiarInput();
     condicionesIniciales();
@@ -48,8 +54,24 @@ function reiniciarJuego(){
     return;
 }
 
+//Generación de número aleatorio
 function numAleat() {
-    return Math.floor(Math.random() * 10) + 1;
+    let numGenerado = Math.floor(Math.random() * numeroMaximo) + 1;
+    console.log(numGenerado);
+    console.log(listaNumerosSecretos);
+
+    if (listaNumerosSecretos.length === numeroMaximo) {
+        asignarTextoElemento("p","Adivinaste todos los números secretos!");
+    } else {
+        //Verificación del número secreto para que no haya repeticiones
+        if (listaNumerosSecretos.includes(numGenerado)) {
+            return numAleat();
+        }else {
+            listaNumerosSecretos.push(numGenerado);
+            return numGenerado;
+        }
+    }
 }
+
 
 condicionesIniciales();
