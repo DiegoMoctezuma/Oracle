@@ -1,12 +1,17 @@
-body {
-    background-color: #CCCCCC;
+.tituloPrincipal{
+    padding-left: 30px;
 }
 
 #banner {
     width: 100%;
 }
 
-h1 {
+.principal {
+    background-color: #CCCCCC;
+    padding: 20px;
+}
+
+.tituloCentral {
     font-size: 20px; text-align: center;
 }
 
@@ -20,4 +25,25 @@ p{
 
 em strong {
         color: red;
+}
+
+.diferenciales{
+    background-color: #FFFFFF;
+    padding: 30px;
+}
+
+
+.items {
+    font-style: italic;
+}
+
+ul {
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    margin-right: 15%;
+}
+
+.imagenDiferenciales {
+    width: 50%;
 }
