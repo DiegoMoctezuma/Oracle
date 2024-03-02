@@ -24,29 +24,29 @@
         <main>
             <form action="">
                 <!--Nombre-->
-                <label for="nombreApellido">Nombre y Apellido</label>
-                <input type="text" name="" id="nombreApellido">
+                <label for="nombreApellido" class="informacion">Nombre y Apellido</label>
+                <input type="text" name="" id="nombreApellido" class="inputInfo">
                 <!--Correo-->
-                <label for="correoElectronico">Correo Electronico</label>
-                <input type="email" name="" id="correoElectronico">
+                <label for="correoElectronico" class="informacion">Correo Electronico</label>
+                <input type="email" name="" id="correoElectronico" class="inputInfo">
                 <!--Telefono-->
-                <label for="telefono">Telefono</label>
-                <input type="text" name="" id="telefono">
+                <label for="telefono" class="informacion">Telefono</label>
+                <input type="text" name="" id="telefono" class="inputInfo">
                 <!--Mensaje-->
-                <label for="mensaje">Mensaje</label>
+                <label for="mensaje" class="informacion">Mensaje</label>
                 <textarea name="" id="mensaje" cols="70" rows="5"></textarea>
                 <!--Contacto-->
                 <p>¿Cómo le gusta que le contactemos?</p>
-                <fieldset>
-                    <label for="radio-email">Email</label>
+                <fieldset class="opcContanto">
+                    <label for="radio-email" class="infoContacto">Email</label>
                     <input type="radio" id="radio-email" value="email" name="contacto">
-                    <label for="radio-telefono">Telefono</label>
+                    <label for="radio-telefono" class="infoContacto">Telefono</label>
                     <input type="radio" id="radio-telefono" value="telefono" name="contacto">
-                    <label for="radio-whatsApp">WhatsApp</label>
+                    <label for="radio-whatsApp" class="infoContacto">WhatsApp</label>
                     <input type="radio" id="radio-whatsApp" value="whatsApp" name="contacto">
                 </fieldset>
                 <!--Novedades-->
-                <label for="novedades"><input type="checkbox" id="novedades">¿Le gustaria recibir novedades de la barbería Alura?</label>
+                <label for="novedades" class="informacion"><input type="checkbox" id="novedades">¿Le gustaria recibir novedades de la barbería Alura?</label>
 
                 <!--Envio-->
                 <input type="submit" value="Enviar" class="botonEnviar">

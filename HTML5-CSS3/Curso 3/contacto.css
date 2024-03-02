@@ -48,30 +48,20 @@ form{
     flex-direction: column;
 }
 
-form > label{
+.informacion, p{
     font-size: 20px;
     margin: 10px 0 5px 0;
 
 }
 
-form > input{
+.inputInfo, form textarea{
     margin: 0 0 10px 0;
     padding: 10px 25px;
     border-radius: 5px;
     border: #BBBBBB 1px solid;
 }
 
-form textarea{
-    border-radius: 5px;
-    border: #BBBBBB 1px solid;
-}
-
-p{
-    margin: 20px 0 0 0;
-    font-size: 20px;
-}
-
-fieldset{
+.opcContanto{
     padding: 20px;
     margin: 5px 0 10px 0;
     display: flex;
@@ -80,7 +70,7 @@ fieldset{
     border: #BBBBBB 1px solid;
 }
 
-fieldset > label {
+.infoContacto {
     font-size: 17px;
     margin: 0 0 0 30px;
 }
