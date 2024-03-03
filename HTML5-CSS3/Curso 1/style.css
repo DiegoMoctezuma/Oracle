@@ -181,3 +181,80 @@ footer {
     font-size: 13px;
     margin: 20px;
 }
+
+/*Formato telefono*/
+@media screen and (max-width: 480px) {
+    *{
+        font-size: smaller;
+    }
+    body{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .caja, .principal,.diferenciales, .ubicacion, .video {
+        width: auto;
+    }
+    /*Header*/
+    header{
+        padding: 0;
+        width:100%;
+    }
+    .caja{
+        justify-content: space-evenly;
+    }
+    header h1 img{
+        width: 65%;
+    }
+    header nav{
+        margin: 0;
+    }
+    header nav ul{
+        flex-direction: column;
+    }
+    header nav a{
+        font-size: smaller;
+    }
+    /*Main*/
+    .principal{
+        padding: 10px;
+        margin: 15px 0 0 0;
+    }
+    .principal > img{
+        display: none;
+    }
+
+    .listaImg{
+        flex-direction: column;
+    }
+    .imagenDiferenciales{
+        width: 80%;
+    }
+    .listaDiferenciales{
+        margin: 0 0 0 10%;
+    }
+    .items{
+        margin: 5px;
+    }
+
+    .ubicacion{
+        padding: 20px;
+    }
+    .ubicacion > iframe{
+        width: 90%;
+    }
+
+    .video{
+        width: 100%;
+        padding: 40px 0 0 0;
+        margin: -10px;	
+    }
+    .video > iframe{
+        width: 80%;
+    }
+
+    /*Footer*/
+    footer img{
+        width: 35%;
+    }
+}
