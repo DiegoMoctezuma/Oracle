@@ -25,16 +25,16 @@
             <form action="">
                 <!--Nombre-->
                 <label for="nombreApellido" class="informacion">Nombre y Apellido</label>
-                <input type="text" name="" id="nombreApellido" class="inputInfo">
+                <input type="text" name="" id="nombreApellido" class="inputInfo" required>
                 <!--Correo-->
                 <label for="correoElectronico" class="informacion">Correo Electronico</label>
-                <input type="email" name="" id="correoElectronico" class="inputInfo">
+                <input type="email" name="" id="correoElectronico" class="inputInfo" required placeholder="correo@dominio.com">
                 <!--Telefono-->
                 <label for="telefono" class="informacion">Telefono</label>
-                <input type="text" name="" id="telefono" class="inputInfo">
+                <input type="tel" name="" id="telefono" class="inputInfo" required placeholder="(XX) XXXX XXXX">
                 <!--Mensaje-->
                 <label for="mensaje" class="informacion">Mensaje</label>
-                <textarea name="" id="mensaje" cols="70" rows="5"></textarea>
+                <textarea name="" id="mensaje" cols="70" rows="5" required></textarea>
                 <!--Contacto-->
                 <p>¿Cómo le gustaría que le contactemos?</p>
                 <fieldset class="opcContanto">
@@ -43,7 +43,7 @@
                     <label for="radio-telefono" class="infoContacto">Telefono</label>
                     <input type="radio" id="radio-telefono" value="telefono" name="contacto">
                     <label for="radio-whatsApp" class="infoContacto">WhatsApp</label>
-                    <input type="radio" id="radio-whatsApp" value="whatsApp" name="contacto">
+                    <input type="radio" id="radio-whatsApp" value="whatsApp" name="contacto" checked>
                 </fieldset>
                 <!--Horario-->
                 <p>¿En qué horario prefiere ser atendido?</p>
@@ -55,7 +55,7 @@
                     </select>
                 </fieldset>
                 <!--Novedades-->
-                <label for="novedades" class="informacion"><input type="checkbox" id="novedades">¿Le gustaría recibir novedades de la barbería Alura?</label>
+                <label for="novedades" class="informacion"><input type="checkbox" id="novedades" checked>¿Le gustaría recibir novedades de la barbería Alura?</label>
 
                 <!--Envio-->
                 <input type="submit" value="Enviar" class="botonEnviar">
