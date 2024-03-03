@@ -6,23 +6,30 @@ body {
 /* Header */
 header {
     background-color: #BBBBBB;
-    padding: 20px 0;
+    padding: 20px 150px;
 }
 
 .caja {
-    width: 940px;
-    position: relative;
-    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
 }
 
 header nav {
-    position: absolute;
     top: 110px;
     right: 0;
+    margin: 0 50px 0 0;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 header nav li {
-    display: inline;
     margin: 0 0 0 15px;
 }
 
@@ -32,6 +39,7 @@ header nav a {
     font-weight: bold;
     font-size: 22px;
     text-decoration: none;
+    transition: .4s;
 }
 
 header nav a:hover {
@@ -44,12 +52,11 @@ main{
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 0 0 100px 0 ;
 }
 
 .principal {
     background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(IMG/banner.jpg);
-    box-shadow: 0 0 30px 20px #BBBBA0;
+    box-shadow: 0 0 20px 10px #000000;
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -111,6 +118,12 @@ main{
     margin: 20px;
     border-radius: 20px;
     box-shadow: 0 0 30px #000000;
+    transition: .4s;
+}
+
+.imagenDiferenciales:hover{
+    scale: 1.05;
+    opacity: 0.9;
 }
 
 .listaDiferenciales {
@@ -118,22 +131,28 @@ main{
     flex-direction: column;
     justify-content: center;
     margin: 0 15% 0 0;
-    list-style: url("IMG/track.svg");
 }
 
 .items {
-    font-size: 18px;
     font-style: italic;
     margin: 15px;
+    line-height: 1.5;
+}
+
+.items:first-child {
+    font-weight: bold;
+}
+
+.items:before{
+    content: url(IMG/track.svg);
 }
 
 .ubicacion{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #000000;
-    color: white;
-    box-shadow: 0 0 30px #000000;
+    background: linear-gradient(#FFFFFF,#000000 75%);
+    color: black;
     width: 100%;
     padding: 50px 0;
     gap: 20px;
@@ -141,7 +160,13 @@ main{
 }
 
 .video{
-    margin: 75px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #000000;
+    padding: 75px 0 100px 0;
+    color: white;
 }
 
 /* Footer */
