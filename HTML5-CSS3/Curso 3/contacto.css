@@ -37,9 +37,9 @@ nav a:hover {
 
 main{
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 100px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 150px;
 }
 
 form{
@@ -107,6 +107,23 @@ form{
     background-color: darkorange;
 }
 
+table{
+    height: 50%;
+    margin: 0 50px 0 0;
+}
+
+table thead{
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+}
+
+table td, th{
+    border: 1px solid orange;
+    padding: 20px;
+    text-align: center;
+}
 
 /* Footer */
 footer {
