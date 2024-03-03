@@ -102,9 +102,9 @@ form{
 
 .botonEnviar:hover{
     cursor: pointer;
-    box-shadow: 0 0 5px black;
+    transform: scale(1.02);
     font-size: 15px;
-    transition: .3s;
+    background-color: darkorange;
 }
 
 
