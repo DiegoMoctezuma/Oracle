@@ -1,9 +1,43 @@
-.tituloPrincipal{
-    padding-left: 30px;
+/* Header */
+header {
+    background-color: #BBBBBB;
+    padding: 20px 0;
 }
+
+.caja {
+    width: 940px;
+    position: relative;
+    margin: 0 auto;
+}
+
+header nav {
+    position: absolute;
+    top: 110px;
+    right: 0;
+}
+
+header nav li {
+    display: inline;
+    margin: 0 0 0 15px;
+}
+
+header nav a {
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    color: #c78c19;
+}
+
+/*Main*/
 
 #banner {
     width: 100%;
+    margin: 10px 0 0 0;
 }
 
 .principal {
@@ -12,7 +46,9 @@
 }
 
 .tituloCentral {
-    font-size: 20px; text-align: center;
+    font-size: 20px; 
+    text-align: center;
+    font-weight: bold;
 }
 
 p{
@@ -29,7 +65,7 @@ em strong {
 
 .diferenciales{
     background-color: #FFFFFF;
-    padding: 30px;
+    padding: 100px;
 }
 
 
@@ -37,13 +73,28 @@ em strong {
     font-style: italic;
 }
 
-ul {
+.listaDiferenciales {
     display: inline-block;
     vertical-align: top;
     width: 20%;
     margin-right: 15%;
+    list-style: square;
 }
 
 .imagenDiferenciales {
     width: 50%;
+    margin: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: url(/HTML5-CSS3/Curso\ 2/IMG/bg.jpg);
+    padding: 40px;
+}
+
+.copyright {
+    color: #FFFFFF;
+    font-size: 13px;
+    margin: 20px;
 }
